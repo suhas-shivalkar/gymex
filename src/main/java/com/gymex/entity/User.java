@@ -1,0 +1,34 @@
+package com.gymex.entity;
+
+import com.gymex.enums.Status;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+@Entity
+@Getter
+@Setter
+@Table(name = "users")
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "user_id")
+    private UUID id;
+    private String name;
+    private String email;
+    private String password;
+    private String role;
+    @Column(name = "current_latitude", precision = 9, scale = 6, nullable = false)
+    private BigDecimal currentLatitude;
+    @Column(name = "current_longitude", precision = 9, scale = 6, nullable = false)
+    private BigDecimal currentLongitude;
+    @Enumerated(EnumType.STRING)
+    private Status status;
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+
+}
