@@ -1,6 +1,4 @@
 package com.gymex.entity;
-
-import com.gymex.enums.Status;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
