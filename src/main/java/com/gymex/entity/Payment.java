@@ -16,7 +16,7 @@ import java.util.UUID;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "payment_id")
+    @Column(name = "id")
     private UUID id;
     @ManyToOne
     @JoinColumn(referencedColumnName = "id")

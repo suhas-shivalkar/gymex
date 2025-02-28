@@ -17,10 +17,10 @@ import java.util.UUID;
 public class GymImage {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "image_id")
+    @Column(name = "id")
     private UUID id;
     @ManyToOne
-    @JoinColumn(referencedColumnName = "gym_id")
+    @JoinColumn(referencedColumnName = "id")
     private Gym gymId;
     private String imageUrl;
 

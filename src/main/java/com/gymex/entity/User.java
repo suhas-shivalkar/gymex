@@ -4,6 +4,7 @@ import com.gymex.enums.Status;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -13,10 +14,11 @@ import java.util.UUID;
 @Getter
 @Setter
 @Table(name = "users")
+@ToString(exclude ="password")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "user_id")
+    @Column(name = "id")
     private UUID id;
     private String name;
     private String email;

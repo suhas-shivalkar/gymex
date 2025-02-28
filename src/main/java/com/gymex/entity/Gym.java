@@ -14,7 +14,7 @@ import java.util.UUID;
 public class Gym {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "gym_id")
+    @Column(name = "id")
     private UUID id;
     private String name;
     @OneToOne

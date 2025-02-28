@@ -15,13 +15,13 @@ import java.util.UUID;
 public class GymAttendance {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "attendance_id")
+    @Column(name = "id")
     private UUID id;
     @ManyToOne
     @JoinColumn(referencedColumnName = "id")
     private User userId;
     @ManyToOne
-    @JoinColumn(referencedColumnName = "gym_id")
+    @JoinColumn(referencedColumnName = "id")
     private Gym gymId;
     @Column( nullable = false, updatable = false)
     private LocalDateTime visitTime;
