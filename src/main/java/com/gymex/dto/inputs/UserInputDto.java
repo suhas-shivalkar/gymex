@@ -42,6 +42,10 @@ public class UserInputDto {
     private BigDecimal currentLongitude;
 
     @NotNull(message = "Status is required")
-    private Status status;
+    @Pattern(regexp = "^(ACTIVE|INACTIVE|EXPIRED)$", message = "Status must be one of: ACTIVE,INACTIVE, EXPIRED")
+    private String status;
 
+    public Status getStatus(){
+        return Status.valueOf(status);
+    }
 }
